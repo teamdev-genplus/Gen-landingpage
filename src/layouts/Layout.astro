@@ -1,0 +1,52 @@
+---
+import Header from "../components/Header.astro";
+// Supports weights 200-800
+import "@fontsource-variable/plus-jakarta-sans";
+interface Props {
+  title: string;
+  description: string;
+}
+const { description, title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/gen-logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="bg-white sticky top-0 z-20">
+      <Header />
+    </div>
+    <slot />
+    <script
+      is:inline
+      src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"
+    ></script>
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: "Ruberoid";
+    src: url("/public/fonts/Ruberoid-Bold.otf") format("otf");
+  }
+  h1,
+  h2,
+  h5,
+  .nav-bar {
+    font-family: "Ruberoid", system-ui, sans-serif;
+  }
+
+  body {
+    font-family: "Plus Jakarta Sans Variable", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #08224b;
+  }
+</style>

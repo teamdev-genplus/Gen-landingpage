@@ -1,0 +1,47 @@
+---
+const CONTENT = [
+  {
+    text: "BIM Automation",
+  },
+  {
+    text: "Structural Automation",
+  },
+  {
+    text: "Parametric Design",
+  },
+  {
+    text: "Virtual construction",
+  },
+  {
+    text: "AI Implementation",
+  },
+];
+---
+
+<div
+  class="slider pt-10 relative overflow-hidden flex font-bold text-xl text-nowrap"
+>
+  <div class="slider-slide flex">
+    {CONTENT.map((content) => <h2 class="h-16 mx-12">{content.text}</h2>)}
+    {CONTENT.map((content) => <h2 class="h-16 mx-12">{content.text}</h2>)}
+    {CONTENT.map((content) => <h2 class="h-16 mx-12">{content.text}</h2>)}
+  </div>
+</div>
+
+<style>
+  /*CSS para el slider*/
+
+  .slider .slider-slide {
+    animation: 150s slider infinite linear;
+  }
+
+  @keyframes slider {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>

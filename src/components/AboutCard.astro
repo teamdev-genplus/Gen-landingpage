@@ -1,0 +1,17 @@
+---
+const { title, description, url } = Astro.props;
+---
+
+<div class="w-[45%] text-center">
+  <div class="p-5">
+    <h5 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      {title}
+    </h5>
+    <div class="mx-4 font-light">
+      <p class="py-5 text-base text-pretty text-gray-900 dark:text-gray-400">
+        {description}
+      </p>
+      <img class="rounded-lg mx-auto" src={url} alt="" />
+    </div>
+  </div>
+</div>
